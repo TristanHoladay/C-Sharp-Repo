@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1Methods", "Day1Methods\Day1Methods.csproj", "{516DD53D-8F2D-420C-BE60-38735CF66EAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PigLatin", "PigLatin\PigLatin.csproj", "{92910D58-93F9-456E-837E-42BB11B28AEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{516DD53D-8F2D-420C-BE60-38735CF66EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516DD53D-8F2D-420C-BE60-38735CF66EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516DD53D-8F2D-420C-BE60-38735CF66EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516DD53D-8F2D-420C-BE60-38735CF66EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92910D58-93F9-456E-837E-42BB11B28AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92910D58-93F9-456E-837E-42BB11B28AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92910D58-93F9-456E-837E-42BB11B28AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92910D58-93F9-456E-837E-42BB11B28AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {228CEBFD-F31F-436F-8C7A-1C5929F06228}
+	EndGlobalSection
+EndGlobal
