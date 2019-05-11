@@ -10,47 +10,94 @@ namespace PigLatin
     {
         static void Main(string[] args)
         {
-            //PigLatin Method
-            //ask user for english word
-            //Calling converter method
-            Console.WriteLine("Please input an English word: ");
+            Console.WriteLine("Please write an English sentence: ");
             string input = Console.ReadLine();
-            Console.WriteLine(ToPigLatin(input));
+            Console.WriteLine(PigLatin(input));
             Console.Read();
         }
 
-        //PigLatin Function
+
+        //Converting Sentences Method
+        public static string PigLatin(string sentence)
+        {
+            string pigSentence = String.Empty;
+
+            //takes sentence, trims off white space
+            string trimSent = sentence.Trim();
+
+            //breaks up each word
+            string[] sentArr = trimSent.Split(' ');
+            
+            for(int i = 0; i<sentArr.Length; i++)
+            {
+                string currentWord = sentArr[i];
+
+                //feeds word into ToPigLatin
+                string pigWord = ToPigLatin(currentWord);
+
+                //gets back result and adds back into a sentence
+                pigSentence = pigSentence + pigWord + " "; 
+            }
+
+            return pigSentence;
+        }
+
+        //Converting Word into PigLatin Function
         public static string ToPigLatin(string word)
         {
             
             bool startsWith = false;
             bool endsWith = false;
+            bool hasPunctuation = false;
+            bool hasVowel = false;
             string currentVowel = string.Empty;
-
-            char[] vowels = { 'a', 'e', 'i','o', 'u'};
+            string cleanWord = string.Empty;
+            string punc = string.Empty;
 
             //Make string lowercase
             string wordLower = word.ToLower();
 
-            //figure out if word starts/ends with vowel
-            // if yes add "yay"
+            char[] vowels = { 'a', 'e', 'i','o', 'u'};
+            char[] punctuation = { '.', ',', '!', '?', ';', ':'};
 
-            if (wordLower.IndexOfAny(vowels) == -1)
+            if (wordLower.IndexOfAny(punctuation) > -1)
             {
-                return (word + "ay");
+                for (int i = 0; i < punctuation.Length; i++)
+                {
+                    punc = punctuation[i].ToString();
+                    if (punc == wordLower[-1].ToString())
+                    {
+                        cleanWord = wordLower.Remove(-1);
+                        break;
+                    }
+                }
             }
             else
             {
+                cleanWord = wordLower;
+            }
+
+            //figure out if word starts/ends with vowel
+            // if yes add "yay"
+
+            if (cleanWord.IndexOfAny(vowels) == -1) 
+            {
+                return (word + "ay" + punc);
+            }
+            else
+            {
+                hasVowel = true;
+
                 for (int i = 0; i < vowels.Length; i++)
                 {
                     currentVowel = vowels[i].ToString();
-                    if (wordLower.StartsWith(currentVowel))
+                    if(cleanWord.StartsWith(currentVowel))
                     {
                         startsWith = true;
                         break;
                     }
 
-                    if (wordLower.EndsWith(currentVowel))
+                    if(cleanWord.EndsWith(currentVowel))
                     {
                         endsWith = true;
                         break;
@@ -60,18 +107,18 @@ namespace PigLatin
 
             if(startsWith == true && endsWith == true)
             {
-                return (word + "yay");
+                return (word + "yay" + punc);
             }
             else if (startsWith == true && endsWith == false)
             {
-                return (word + "ay");
+                return (word + "ay" + punc);
             }
             else
             {
                 int firstVowelPosition = wordLower.IndexOfAny(vowels);
                 string firstHalf = word.Substring(0, firstVowelPosition);
                 string secondHalf = word.Substring(firstVowelPosition);
-                return (secondHalf + firstHalf + "ay");
+                return (secondHalf + firstHalf + "ay" + punc);
             }
         }
     }
