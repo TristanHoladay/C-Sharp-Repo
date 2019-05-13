@@ -56,6 +56,7 @@ namespace PigLatin
 
             //Make string lowercase
             string wordLower = word.ToLower();
+            int lastChar = wordLower.Length - 1;
 
             char[] vowels = { 'a', 'e', 'i','o', 'u'};
             char[] punctuation = { '.', ',', '!', '?', ';', ':'};
@@ -65,10 +66,11 @@ namespace PigLatin
                 for (int i = 0; i < punctuation.Length; i++)
                 {
                     punc = punctuation[i].ToString();
-                    if (punc == wordLower[-1].ToString())
+                    if (punc == wordLower[lastChar].ToString())
                     {
-                        cleanWord = wordLower.Remove(-1);
+                        cleanWord = wordLower.Remove(lastChar);
                         break;
+                       
                     }
                 }
             }
@@ -80,7 +82,7 @@ namespace PigLatin
             //figure out if word starts/ends with vowel
             // if yes add "yay"
 
-            if (cleanWord.IndexOfAny(vowels) == -1) 
+            if (cleanWord.IndexOfAny(vowels) == -1)
             {
                 return (word + "ay" + punc);
             }
@@ -91,13 +93,17 @@ namespace PigLatin
                 for (int i = 0; i < vowels.Length; i++)
                 {
                     currentVowel = vowels[i].ToString();
-                    if(cleanWord.StartsWith(currentVowel))
+                    if (cleanWord.StartsWith(currentVowel))
                     {
                         startsWith = true;
                         break;
                     }
+                }
 
-                    if(cleanWord.EndsWith(currentVowel))
+                for (int i = 0; i < vowels.Length; i++)
+                {
+                    currentVowel = vowels[i].ToString();
+                    if (cleanWord.EndsWith(currentVowel))
                     {
                         endsWith = true;
                         break;
@@ -105,9 +111,10 @@ namespace PigLatin
                 }
             }
 
+
             if(startsWith == true && endsWith == true)
             {
-                return (word + "yay" + punc);
+                return (word + "yay");
             }
             else if (startsWith == true && endsWith == false)
             {
@@ -115,9 +122,9 @@ namespace PigLatin
             }
             else
             {
-                int firstVowelPosition = wordLower.IndexOfAny(vowels);
-                string firstHalf = word.Substring(0, firstVowelPosition);
-                string secondHalf = word.Substring(firstVowelPosition);
+                int firstVowelPosition = cleanWord.IndexOfAny(vowels);
+                string firstHalf = cleanWord.Substring(0, firstVowelPosition);
+                string secondHalf = cleanWord.Substring(firstVowelPosition);
                 return (secondHalf + firstHalf + "ay" + punc);
             }
         }
