@@ -61,6 +61,7 @@ namespace PigLatin
             char[] vowels = { 'a', 'e', 'i','o', 'u'};
             char[] punctuation = { '.', ',', '!', '?', ';', ':'};
 
+            //Checks if Word has Puncuation at the End and Removes It
             if (wordLower.IndexOfAny(punctuation) > -1)
             {
                 for (int i = 0; i < punctuation.Length; i++)
