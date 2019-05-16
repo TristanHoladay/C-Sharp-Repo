@@ -30,55 +30,66 @@ namespace RockPaperScissors
             int randNumber = generator.Next(0, 3);
 
             //while(handPlays <= 3 && (userScore != 2 || computerScore != 2))
-           // {
-                //associates number with choice
-                //will revise code to use nested switch case
-                switch (randNumber)
-                {
-                    case 0:
-                        computerHand = "rock";
-                        break;
-                    case 1:
-                        computerHand = "paper";
-                        break;
-                    case 2:
-                        computerHand = "scissors";
-                        break;
-                    default:
-                        Console.WriteLine("What....");
-                        break;
-                }
+            // {
+            //associates number with choice
+            //will revise code to use nested switch case
+            switch (randNumber)
+            {
+                case 0:
+                    computerHand = "rock";
+                    break;
+                case 1:
+                    computerHand = "paper";
+                    break;
+                case 2:
+                    computerHand = "scissors";
+                    break;
+                default:
+                    Console.WriteLine("What....");
+                    break;
+            }
 
-                if (userHand == computerHand)
-                {
-                    return "You tied.";
-                }
-                else if (userHand == "rock" && computerHand == "scissors")
-                {
-                    return $"{userHand} beats {computerHand}. \nYou Win!";
-                }
-                else if (userHand == "rock" && computerHand == "paper")
-                {
-                    return $"{computerHand} beats {userHand}. \nYou Lose!";
-                }
-                else if (userHand == "paper" && computerHand == "rock")
-                {
-                    return $"{userHand} beats {computerHand}. \nYou Win!";
-                }
-                else if (userHand == "paper" && computerHand == "scissors")
-                {
-                    return $"{computerHand} beats {userHand}. \nYou Lose!";
-                }
-                else if (userHand == "scissors" && computerHand == "paper")
-                {
-                    return $"{userHand} beats {computerHand}. \nYou Win!";
-                }
-                else
-                {
-                    return $"{computerHand} beats {userHand}. \nYou Lose!";
-                }
+            if (userHand == computerHand)
+            {
+                return "You tied.";
+            }
+            else if (userHand == "rock" && computerHand == "scissors")
+            {
+                return $"{userHand} beats {computerHand}. \nYou Win!";
+            }
+            else if (userHand == "rock" && computerHand == "paper")
+            {
+                return $"{computerHand} beats {userHand}. \nYou Lose!";
+            }
+            else if (userHand == "paper" && computerHand == "rock")
+            {
+                return $"{userHand} beats {computerHand}. \nYou Win!";
+            }
+            else if (userHand == "paper" && computerHand == "scissors")
+            {
+                return $"{computerHand} beats {userHand}. \nYou Lose!";
+            }
+            else if (userHand == "scissors" && computerHand == "paper")
+            {
+                return $"{userHand} beats {computerHand}. \nYou Win!";
+            }
+            else
+            {
+                return $"{computerHand} beats {userHand}. \nYou Lose!";
+            }
             //}
-        
+
         }
     }
 }
+
+
+
+
+
+
+    //rock 0
+    //paper -1
+    //scissors 1
+    //if absolute number the same then bigger wins
+    //if absolute value not the same then smaller wins
