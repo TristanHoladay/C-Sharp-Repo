@@ -39,6 +39,7 @@ namespace TicTacToe
         {
             printBoard();
             getInput();
+            Console.ReadLine();
         }
 
         #region Input
@@ -50,18 +51,17 @@ namespace TicTacToe
             {
                 Console.WriteLine("Player " + currentPlayer);
                 Console.WriteLine("Input a row and press enter: ");
-                Console.ReadLine();
                 int row = int.Parse(Console.ReadLine());
                 Console.WriteLine("You typed " + row);
                 Console.WriteLine("Input a column and press enter: ");
                 int column = int.Parse(Console.ReadLine());
                 Console.WriteLine("You typed " + column);
-                Console.ReadLine();
+                
                 placeMark(row, column);
 
             } while (!hasWon() && !isTie());
 
-            Console.ReadLine();
+            
         }
         #endregion
 
@@ -75,7 +75,7 @@ namespace TicTacToe
             if (board[rowIndx, colIndx] == " ")
             {
                 board[rowIndx, colIndx] = currentPlayer;
-                Console.WriteLine(board);
+               
 
                 //Check if currentPlayer has won before it is changed
                 hasWon();
@@ -160,8 +160,7 @@ namespace TicTacToe
                 }
                 else
                 {
-                  return false;
-                  break;
+                    return false;
                 }       
             }
             
@@ -203,7 +202,7 @@ namespace TicTacToe
                 Console.WriteLine("|");
             }
             Console.WriteLine("-------");
-            Console.Read();
+            
         }
 
     }
@@ -214,3 +213,10 @@ namespace TicTacToe
 
 
 
+/*
+ GameStatus[r1, r2, r3, col1, col2, col3, diag1, diag2]
+ row 1: +1 -1 +1 [x, o, x]
+ row 2: -1 +1 -1 [o, o, x]
+ row 3: +1 +1 +1 [x, x , x]
+ you update the row/col depending on what was inputted. 
+ */
