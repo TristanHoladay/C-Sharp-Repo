@@ -16,13 +16,13 @@ namespace MasterMind
 
         static void Main(string[] args)
         {
-            createSecrete();
+            createSecret();
             userGuess();
             Console.Read();
         }
 
         //Generate Random Secret Values
-        public static void createSecrete()
+        public static void createSecret()
         {
             for (int i = 0; i < 2; i++)
             {
