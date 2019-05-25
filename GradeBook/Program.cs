@@ -14,6 +14,7 @@ namespace GradeBook
         {
             studentInput();
             outputGradeBook();
+            studentInput();
             Console.Read();
         }
 
@@ -24,24 +25,33 @@ namespace GradeBook
             Console.WriteLine("Welcome to Grade Book! Would you like to input data: yes or no?");
             string choice = Console.ReadLine().ToLower();
 
+
             while (choice != "no")
             {
 
-                Console.WriteLine("Please enter a first name: ");
+                Console.WriteLine("Please enter a student's first and last name: ");
                 string studentName = Console.ReadLine();
 
                 Console.WriteLine("Please enter student's grades separated by spaces like so: 100 100 100 100.");
                 string studentGrades = Console.ReadLine();
-
                 gradeBook.Add(studentName, studentGrades);
 
-                Console.WriteLine("Do you want to input another student or quit?");
-                string quit = Console.ReadLine();
+                Console.WriteLine("Do you want to input another student, edit a student, or finish?");
+                string secondChoice = Console.ReadLine();
 
-                if (quit == "quit")
+                if (secondChoice == "quit")
                 {
                     break;
                 }
+                else if( secondChoice == "edit")
+                {
+                    editGradeBook();
+                }
+                else
+                {
+                    //loop keeps going
+                }
+            
             }     
         }
         #endregion
@@ -75,7 +85,57 @@ namespace GradeBook
                 float average = (sum / numberGrades.Length);
 
                 Console.WriteLine($"{kvp.Key}:\nHighest Grade is {highestGrade} \nLowest Grade is {lowestGrade} \nAverage is {average}");
+                Console.WriteLine("Would you like to close Grade Book, or go back and enter more students: yes or no?");
+                string finalChoice = Console.ReadLine().ToLower();
+
+                if(finalChoice == "no")
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    break;
+                }
             }
+        }
+        #endregion
+
+        #region edits
+        private static void editGradeBook()
+        {
+            Console.WriteLine("Please enter first and last name of student you want to edit: ");
+            string editStudent = Console.ReadLine();
+            Console.WriteLine("Do you want to add or change a grade entry?");
+            string editType = Console.ReadLine();
+
+            if(editType == "add")
+            {
+                Console.WriteLine("Please enter the grade that you would like to add.");
+                string addGrade = Console.ReadLine();
+                gradeBook[editStudent] = gradeBook[editStudent] + addGrade;
+            }
+            else
+            {
+                Console.WriteLine($"The grade entries for {editStudent} are: {gradeBook[editStudent]}");
+                Console.WriteLine("What grade entry would you like to change?");
+                string changeGrade = Console.ReadLine();
+                Console.WriteLine($"What do you want to replace {editStudent}'s {changeGrade} with?");
+                string newGrade = Console.ReadLine();
+
+                //turn the students value string into an array
+                string[] studGradeArr = gradeBook[editStudent].Split(' ');
+                int gradeIndex = Array.IndexOf(studGradeArr, changeGrade);
+                studGradeArr[gradeIndex] = newGrade;
+
+                //take edited grade array and turn back into a string value
+                gradeBook[editStudent] = string.Join(" ", studGradeArr);
+
+                Console.WriteLine($"{editStudent}'s grade entries are now: {gradeBook[editStudent]}");
+                Console.WriteLine("Does that look correct?");
+                string affirm = Console.ReadLine();
+
+            }
+            
         }
         #endregion
 
