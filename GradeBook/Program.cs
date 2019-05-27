@@ -14,6 +14,7 @@ namespace GradeBook
         {
             studentInput();
             outputGradeBook();
+            moreInput();
             studentInput();
             Console.Read();
         }
@@ -85,17 +86,19 @@ namespace GradeBook
                 float average = (sum / numberGrades.Length);
 
                 Console.WriteLine($"{kvp.Key}:\nHighest Grade is {highestGrade} \nLowest Grade is {lowestGrade} \nAverage is {average}");
-                Console.WriteLine("Would you like to close Grade Book, or go back and enter more students: yes or no?");
-                string finalChoice = Console.ReadLine().ToLower();
+            }
+        }
+        #endregion
 
-                if(finalChoice == "no")
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    break;
-                }
+        #region more input
+        public static void moreInput()
+        {
+            Console.WriteLine("Would you like to close Grade Book, or go back and enter more students: close or enter?");
+            string finalChoice = Console.ReadLine().ToLower();
+
+            if (finalChoice == "close")
+            {
+                Environment.Exit(0);
             }
         }
         #endregion
