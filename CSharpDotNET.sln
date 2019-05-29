@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "GradeBook\Grad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesPreWork", "ClassesPreWork\ClassesPreWork.csproj", "{E18C6B7B-A896-470A-821E-243D21BF5F25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowersOfHanoi", "TowersOfHanoi\TowersOfHanoi.csproj", "{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{E18C6B7B-A896-470A-821E-243D21BF5F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E18C6B7B-A896-470A-821E-243D21BF5F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E18C6B7B-A896-470A-821E-243D21BF5F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
