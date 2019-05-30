@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesPreWork", "ClassesPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowersOfHanoi", "TowersOfHanoi\TowersOfHanoi.csproj", "{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoardTraining2", "WhiteBoardTraining2\WhiteBoardTraining2.csproj", "{9D465EDB-BD61-4176-B31A-4A8CF991309D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoCos", "PoCos\PoCos.csproj", "{6E9A0F93-863F-4F57-9BBE-9580ABCA988A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08CF03A-A4BA-4BC7-962B-4CB53C06FBFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D465EDB-BD61-4176-B31A-4A8CF991309D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D465EDB-BD61-4176-B31A-4A8CF991309D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D465EDB-BD61-4176-B31A-4A8CF991309D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D465EDB-BD61-4176-B31A-4A8CF991309D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9A0F93-863F-4F57-9BBE-9580ABCA988A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9A0F93-863F-4F57-9BBE-9580ABCA988A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9A0F93-863F-4F57-9BBE-9580ABCA988A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9A0F93-863F-4F57-9BBE-9580ABCA988A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

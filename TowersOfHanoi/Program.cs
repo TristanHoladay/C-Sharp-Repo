@@ -83,6 +83,11 @@ namespace TowersOfHanoi
             Console.WriteLine("Select a Tower to Move Block to: ");
             string toTower = Console.ReadLine();
 
+            //don't need block to move, it's implicit because you can only take off one block
+            //don't have to add pop() and push() to check, use peek()
+            //push stacks to temp stack to print
+
+            //
             if(!checkMove(fromTower, toTower, moveBlock))
             {
                 Console.WriteLine("That is an invalid move. \nYou cannot place a larger block ontop of a smaller block.");
@@ -92,27 +97,63 @@ namespace TowersOfHanoi
 
         #region Check Move
         private static bool checkMove(string fromTower, string toTower, int moveBlock)
-        {
+        {   
+            //turning "from" stack into an array
             Stack<int> previousStack = towerBoard[fromTower.ToUpper()];
+            int[] prevStackArray = previousStack.ToArray();
+
+            //turning "to" stack into a list
             Stack<int> newStack = towerBoard[toTower.ToUpper()];
-                
-            newStack.Push(moveBlock);
+            List<int> blocksList = newStack.ToList();
 
-            int[] blocksArray = newStack.ToArray();
+            blocksList.Add(moveBlock);
 
-            if (blocksArray.Length > 1)
+            //Checks That Last Index is Less than 1 before
+            if (blocksList.Count > 1)
             {
-                for (int i = 1; i < blocksArray.Length; i++)
+                for (int i = 1; i<blocksList.Count; i++)
                 {
-                    if (blocksArray[i] > blocksArray[i - 1])
+                    if (blocksList[i] > blocksList[i - 1])
                     {
-                        newStack.Pop();
                         return false;
                     }
                 }
+                
+                    for (int i = 0; i < blocksList.Count - 1; i++)
+                    {
+                        newStack.Pop();
+                    }
+
+                    int lastNSIndex = blocksList.Count - 1;
+
+                    for (int i = lastNSIndex; i >= 0; i--)
+                    {
+                        newStack.Push(blocksList[i]);
+                        return true;
+                    }
+                
             }
 
-            previousStack.Pop();
+            //Remove All Values in Stack
+            int numPS = 1;
+            while(numPS <= previousStack.Count)
+            {
+                previousStack.Pop();
+            }
+
+            //So Can Add Back in LIFO Order
+            int lastIndex = prevStackArray.Length - 1;
+
+            for(int i=lastIndex; i>=0; i--)
+            {
+                
+                if(prevStackArray[i] != moveBlock)
+                {
+                    previousStack.Push(prevStackArray[i]);
+                }
+            }
+
+            newStack.Push(moveBlock);
             return true;
         }
         #endregion 
@@ -120,18 +161,14 @@ namespace TowersOfHanoi
         #region Win?
         private static bool checkWin()
         {
-            foreach(KeyValuePair<string, Stack<int>> kvp in towerBoard)
+            foreach (KeyValuePair<string, Stack<int>> kvp in towerBoard)
             {
-                if (kvp.Key != "A")
-                {
-                    int[] winArray = towerBoard[kvp.Key].ToArray();
-                    int lastIndex = winArray.Length - 1;
-                    if (winArray[0] == 4 && lastIndex == 1)
-                    {
+                if (kvp.Key != "A" && kvp.Value.Count == 4)
+                {      
                         Console.WriteLine("You Won!!!");
                         return true;
-                    }
                 }
+            }
             return false;
         }
         #endregion
