@@ -44,7 +44,7 @@ namespace PoCos
             class Book
          {
             public string Title { get; private set; }
-            public string Authors { get; private set; }
+            public List<string> Authors { get; private set; }
             public string Pages { get; private set; }
             public string SKU { get; private set; }
             public string Publisher { get; private set; }
@@ -54,7 +54,7 @@ namespace PoCos
             public Book(string T, string A, string P, string sku, string Pub, string cost)
             {
                     Title = T;
-                    Authors = A;
+                    Authors.Add(A);
                     Pages = P;
                     SKU = sku;
                     Publisher = Pub;
@@ -70,9 +70,9 @@ namespace PoCos
                 public string Model { get; private set; }
                 public string Variant { get; private set; }
                 public string Capacity { get; private set; }
-                public string Engines { get; private set; }
+                public int Engines { get; private set; }
 
-                public Airplane(string Man, string Mod, string Var, string Cap, string Eng)
+                public Airplane(string Man, string Mod, string Var, string Cap, int Eng)
                 {
                     Manufacturer = Man;
                     Model = Mod;

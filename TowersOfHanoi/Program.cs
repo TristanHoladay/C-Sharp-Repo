@@ -28,7 +28,7 @@ namespace TowersOfHanoi
         {   //Intro Game
             Console.WriteLine("Welcome to Towers of Hanoi!");
             Console.WriteLine("Here's the goal: Get the blocks from the A tower to the C tower in the same order.");
-            Console.WriteLine("You can't place larger blocks on top of smaller blocks. Try to do it in as few moves as possible");
+            Console.WriteLine("Remember you can't place larger blocks on top of smaller blocks. Try to do it in as few moves as possible");
             Console.WriteLine("And begin!!!");
             
             do
@@ -70,26 +70,13 @@ namespace TowersOfHanoi
             //convert the stacks to a list,
             //push that list to a temporary stack
             //print out the temporary stack so the values show from biggest to smallest
-            foreach (KeyValuePair<string, Stack<int>> kvp in towerBoard)
+           foreach(var item in towerBoard)
             {
-                string blocks = "";
-                Stack<int> TempStack = new Stack<int>();
-                List<int> tempList = kvp.Value.ToList();
+                Console.Write($"{item.Key}: ");
 
-                for(int i=0; i<tempList.Count; i++)
-                {
-                    TempStack.Push(tempList[i]);
-                    
-                }
-
-                foreach(int block in TempStack)
-                {
-                    blocks += block.ToString() + " ";
-                }
-
-
-                Console.WriteLine(kvp.Key + ": " + blocks);
+                Console.WriteLine(string.Join(" ", item.Value.Reverse()));
             }
+
         }
         #endregion
 
