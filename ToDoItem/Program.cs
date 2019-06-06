@@ -71,13 +71,16 @@ namespace ToDoItem
         {
             int count = 0;
 
-            foreach(ToDoItem item in ToDoList)
+            Console.WriteLine("To Do List:");
+            Console.WriteLine("Description | " + "Due Date |" + " Priority");
+            Console.WriteLine("---------------------------------");
+            foreach (ToDoItem item in ToDoList)
             {
                 count += 1;
-                Console.WriteLine("Things to Do:");
-                Console.WriteLine(count+ ") " + item.Description + "| " + item.DueDate + "| " + item.Priority);
+                Console.WriteLine(count+ ") " + item.Description + " | " + item.DueDate + " | " + item.Priority);
             }
             
         }
+
     }
 }

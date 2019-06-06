@@ -80,6 +80,25 @@ namespace PoCos
                     Capacity = Cap;
                     Engines = Eng;
                 }
+
+
+                private string _myField;
+
+                public string MyProperty
+                {
+                    get
+                    {
+                        return _myField;
+                    }
+                    set
+                    {
+                        _myField = value;
+                    }
+                }
+
+
+
+
             }
 #endregion
         }
