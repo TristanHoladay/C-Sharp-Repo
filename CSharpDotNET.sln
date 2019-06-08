@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoItem", "ToDoItem\ToDoIt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard4.2", "WhiteBoard4.2\WhiteBoard4.2.csproj", "{03F6DBD8-1898-4E34-B472-C584C1C1F079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D3DPoints", "2D3DPoints\2D3DPoints.csproj", "{DFFC2259-252C-41DB-9D63-915FA14D19EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{03F6DBD8-1898-4E34-B472-C584C1C1F079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03F6DBD8-1898-4E34-B472-C584C1C1F079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03F6DBD8-1898-4E34-B472-C584C1C1F079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFFC2259-252C-41DB-9D63-915FA14D19EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFC2259-252C-41DB-9D63-915FA14D19EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFC2259-252C-41DB-9D63-915FA14D19EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFC2259-252C-41DB-9D63-915FA14D19EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
