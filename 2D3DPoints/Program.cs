@@ -11,9 +11,11 @@ namespace _2D3DPoints
         static void Main(string[] args)
         {
             Point2D firstPoint = new Point2D(7, 5);
+            Point2D firstPointB = new Point2D(7, 5);
             Console.WriteLine(firstPoint);  
             Point3D secondPoint = new Point3D(7, 5, 12);
             Console.WriteLine(secondPoint);
+            Console.WriteLine(firstPointB.Equals(firstPoint));
             Console.WriteLine(firstPoint.Equals(secondPoint));
             Console.Read();
         }
