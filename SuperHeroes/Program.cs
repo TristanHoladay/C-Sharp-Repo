@@ -13,7 +13,7 @@ namespace SuperHeroes
         static void Main(string[] args)
         {
             addToList();
-            PrintList();
+            Console.WriteLine(PrintList());
             Console.Read();   
         }
 
@@ -36,7 +36,7 @@ namespace SuperHeroes
         {
             foreach (Person obj in personList)
             {
-                Console.WriteLine(obj.Name + ": " + obj.PrintGreeting(), ".\n");
+                return obj.Name + ": " + obj.PrintGreeting() + ".\n";
             }
 
             return null;
