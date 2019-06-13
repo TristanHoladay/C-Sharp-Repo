@@ -13,7 +13,7 @@ namespace SuperHeroes
         static void Main(string[] args)
         {
             addToList();
-            Console.WriteLine(PrintList());
+            PrintList();
             Console.Read();   
         }
 
@@ -27,7 +27,8 @@ namespace SuperHeroes
             Villain v1 = new Villain("Master Madness", "Charging Charles");
             Villain v2 = new Villain("Captain Cutthroat", "Majetic Manatee");
 
-            personList.AddRange (new Person[] { p1, p2, sh1, sh2, v1, v2 });
+
+            personList.AddRange(new Person[] { p1, p2, sh1, sh2, v1, v2 });
         }
         #endregion
 
@@ -36,7 +37,7 @@ namespace SuperHeroes
         {
             foreach (Person obj in personList)
             {
-                return obj.Name + ": " + obj.PrintGreeting() + ".\n";
+                Console.WriteLine(obj.Name + ": " + obj.PrintGreeting() + "\n");
             }
 
             return null;

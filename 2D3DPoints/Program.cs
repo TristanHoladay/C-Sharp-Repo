@@ -14,9 +14,12 @@ namespace _2D3DPoints
             Point2D firstPointB = new Point2D(7, 5);
             Console.WriteLine(firstPoint);  
             Point3D secondPoint = new Point3D(7, 5, 12);
+            Point3D secondPointB = new Point3D(7, 4, 12);
             Console.WriteLine(secondPoint);
             Console.WriteLine(firstPointB.Equals(firstPoint));
+            Console.WriteLine(firstPointB == firstPoint);
             Console.WriteLine(firstPoint.Equals(secondPoint));
+            Console.WriteLine(secondPointB.Equals(secondPoint));
             Console.Read();
         }
     }
@@ -44,7 +47,7 @@ namespace _2D3DPoints
         //this is to compare instances for value equality
         public override bool Equals(Object obj)
         {
-            if((obj == null) || ! this.GetType().Equals(obj.GetType()))
+            if((obj == null) || ! GetType().Equals(obj.GetType()))
             {
                 return false;
             }
