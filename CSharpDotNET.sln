@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtable_Presentation", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week5.2WhiteBoard", "Week5.2WhiteBoard\Week5.2WhiteBoard.csproj", "{7D156E00-6133-4D73-AD90-E2041260ED94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLot", "CarLot\CarLot.csproj", "{EA30D0EE-B427-447A-BDAC-165BDE121297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{7D156E00-6133-4D73-AD90-E2041260ED94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D156E00-6133-4D73-AD90-E2041260ED94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D156E00-6133-4D73-AD90-E2041260ED94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA30D0EE-B427-447A-BDAC-165BDE121297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA30D0EE-B427-447A-BDAC-165BDE121297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA30D0EE-B427-447A-BDAC-165BDE121297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA30D0EE-B427-447A-BDAC-165BDE121297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

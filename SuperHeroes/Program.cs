@@ -74,8 +74,8 @@ namespace SuperHeroes
     #region Super Hero
     class SuperHero : Person
     {
-        protected string RealName;
-        protected string SuperPower;
+        protected string RealName { get; set; }
+        protected string SuperPower { get; set; }
 
         public SuperHero(string name, string real, string super) : base (name, null)
         {
@@ -93,7 +93,7 @@ namespace SuperHeroes
     #region Villain
     class Villain : Person
     {
-        protected string Nemesis;
+        protected string Nemesis { get; set; }
 
         public Villain(string name, string nemesis) : base (name, null)
         {
