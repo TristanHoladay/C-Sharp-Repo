@@ -95,7 +95,10 @@ namespace CarLot
         public string Model;
         public int Price;
 
-        public abstract string Description(); 
+        public virtual string Description()
+        {
+            return "This is a Vehicle Description";
+        }
     }
     #endregion
 
