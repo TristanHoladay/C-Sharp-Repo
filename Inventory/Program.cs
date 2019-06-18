@@ -22,6 +22,7 @@ namespace Inventory
 
             foreach(IRentable item in InventoryList)
             {
+                Console.WriteLine(item.GetType().Name);
                 Console.WriteLine("Daily Rate: " + item.GetDailyRate());
                 Console.WriteLine(item.GetDescription() + "\n");
             }
