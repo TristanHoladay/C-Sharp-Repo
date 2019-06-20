@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard6.1", "WhiteBoard
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inventory.csproj", "{7671B0BE-5655-4293-8D93-A7819ED7E1C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkers", "Checkers\Checkers.csproj", "{9E104A34-3731-4AE9-AA56-24210DC4984D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{7671B0BE-5655-4293-8D93-A7819ED7E1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7671B0BE-5655-4293-8D93-A7819ED7E1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7671B0BE-5655-4293-8D93-A7819ED7E1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E104A34-3731-4AE9-AA56-24210DC4984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E104A34-3731-4AE9-AA56-24210DC4984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E104A34-3731-4AE9-AA56-24210DC4984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E104A34-3731-4AE9-AA56-24210DC4984D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
