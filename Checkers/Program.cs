@@ -259,40 +259,58 @@ namespace Checkers
         }
         #endregion
 
+
+        public bool userValidation(string src, string dest)
+        {
+            //Check if either input was empty
+            if (String.IsNullOrEmpty(src) || String.IsNullOrEmpty(dest))
+            {
+                Console.WriteLine();
+                Console.WriteLine("***You missed and input");
+                return false;
+            }
+            else
+            {
+                string[] source = src.Split(',');
+                string[] destination = dest.Split(',');
+
+                for(int i = 0; i < 2; i++)
+                {
+                    if(String.IsNullOrEmpty(source[i]) || String.IsNullOrEmpty(destination[i]))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+
+        }
+
+
         #region Process Input
         public void ProcessInput()
         {
             Console.WriteLine("Select Checker to move in the form of row, column");
-            string[] src = Console.ReadLine().Split(',');
+            string from = Console.ReadLine();
             Console.WriteLine("Select a space to move to in the form of row, column");
-            string[] dest = Console.ReadLine().Split(',');
+            string to = Console.ReadLine();
+
             
-            bool checkIfNull(string[] src1, string[] dest1)
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    if (src1[i] == null || dest1[i] == null)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
+            
 
-                return true;
-            }
-
-
-
+            
+            
+            
             if (src.Length > 2 || dest.Length > 2)
             {
-                Console.WriteLine("You have inputted too many numbers. Try again.");
+                Console.WriteLine();
+                Console.WriteLine("***You have inputted too many numbers. Try again.");
             }
             else if (!checkIfNull(src, dest))
             {
-                Console.WriteLine("There are values missing. Please try again");
+                Console.WriteLine();
+                Console.WriteLine("***There are values missing. Please try again");
             }
             else
             {
@@ -302,7 +320,8 @@ namespace Checkers
 
                 if (c == null)
                 {
-                    Console.WriteLine("There is no checker in the source location");
+                    Console.WriteLine();
+                    Console.WriteLine("***There is no checker in the source location");
                 }
                 else
                 {
@@ -328,7 +347,7 @@ namespace Checkers
                     }
                 }
             }
-  
+
         }
         #endregion
 
@@ -349,7 +368,8 @@ namespace Checkers
                 grid[c.Position.Row][c.Position.Column] = c.Symbol;
             }
 
-            Console.WriteLine("  0  1  2  3  4  5  6  7");
+            Console.WriteLine();
+            Console.WriteLine("   0   1   2   3   4   5   6   7");
             Console.Write("  ");
             for (int i = 0; i < 32; i++)
             {
