@@ -259,61 +259,55 @@ namespace Checkers
         }
         #endregion
 
-
+        #region Validation
         public bool userValidation(string src, string dest)
         {
             //Check if either input was empty
             if (String.IsNullOrEmpty(src) || String.IsNullOrEmpty(dest))
             {
-                Console.WriteLine();
-                Console.WriteLine("***You missed and input");
                 return false;
             }
-            else
-            {
-                string[] source = src.Split(',');
-                string[] destination = dest.Split(',');
 
-                for(int i = 0; i < 2; i++)
+            string[] source = src.Split(',');
+            string[] destination = dest.Split(',');
+
+            //Check for too many numbers
+            if (source.Length > 2 || destination.Length > 2)
+            {
+                return false;
+            }
+
+            //Check if only partial input is valid
+            for (int i = 0; i < 2; i++)
+            {
+                if (String.IsNullOrEmpty(source[i]) || String.IsNullOrEmpty(destination[i]))
                 {
-                    if(String.IsNullOrEmpty(source[i]) || String.IsNullOrEmpty(destination[i]))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
 
             return true;
-
         }
-
+        #endregion
 
         #region Process Input
         public void ProcessInput()
         {
             Console.WriteLine("Select Checker to move in the form of row, column");
-            string from = Console.ReadLine();
+            string from = Console.ReadLine().Trim();
             Console.WriteLine("Select a space to move to in the form of row, column");
-            string to = Console.ReadLine();
+            string to = Console.ReadLine().Trim();
 
-            
-            
 
-            
-            
-            
-            if (src.Length > 2 || dest.Length > 2)
+            if (!userValidation(from, to))
             {
                 Console.WriteLine();
-                Console.WriteLine("***You have inputted too many numbers. Try again.");
-            }
-            else if (!checkIfNull(src, dest))
-            {
-                Console.WriteLine();
-                Console.WriteLine("***There are values missing. Please try again");
+                Console.WriteLine("***You missed an input or have inputted too many numbers. Please try again.***");
             }
             else
             {
+                string[] src = from.Split(',');
+                string[] dest = to.Split(',');
                 Position source = new Position(int.Parse(src[0]), int.Parse(src[1]));
                 Position destination = new Position(int.Parse(dest[0]), int.Parse(dest[1]));
                 Checker c = board.GetChecker(source);
