@@ -59,7 +59,7 @@ namespace SuperHeroes
             NickName = nickname;
         }
 
-        public override string ToString()
+        public string ToString()
         {
             return Name;
         }

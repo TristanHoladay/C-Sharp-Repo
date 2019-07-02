@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Book_Inventory
 {
@@ -11,6 +13,39 @@ namespace Book_Inventory
 
             addBook(context);
             printInventory(context);
+
+
+            IEnumerable<Book> book = context.books.OrderBy(x => x.Title);
+            foreach (Book b in book)
+            {
+                Console.WriteLine($"{b.ID} - {b.Title} by {b.Author}");
+            }
+
+            IEnumerable<Book> authbook = context.books.OrderBy(x => x.Author);
+            foreach(Book b in authbook)
+            {
+                Console.WriteLine($"{b.ID} - {b.Title} by {b.Author}");
+            }
+
+
+            Console.WriteLine("Do you want to delete a book? Y/N");
+            string delete = Console.ReadLine().ToLower();
+           
+
+
+            //if(delete == "y")
+            //{
+            //    Console.WriteLine("Which book (title) do you want to delete?");
+            //    string delBook = Console.ReadLine().Trim();
+
+                
+                                         
+
+                
+            //    context.SaveChanges();
+
+            //    printInventory(context);
+            //}
         }
 
         #region Input
