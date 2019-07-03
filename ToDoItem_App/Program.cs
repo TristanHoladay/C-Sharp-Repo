@@ -6,7 +6,17 @@ namespace ToDoItem_App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ConsoleUtil ToDo = new ConsoleUtil();
+            if (!ToDo.DisplayMenu())
+            {
+                //repeat the code...
+            }
+            else
+            {
+                ToDo.ProcessInput();
+            }
+
+            Console.Read();
         }
     }
 }

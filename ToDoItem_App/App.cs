@@ -6,30 +6,36 @@ namespace ToDoItem_App
 {
     class App
     {
-        public UserChoice Choice { get; set; }
+        public ItemRepository Item { get; set; }
 
-        public App(string choice)
+        public App()
         {
-            this.Choice = choice;
+            Item = new ItemRepository();
+        }
+       
+         public void AddItem(string description, string status, DateTime duedate)
+        {
+            Item.AddItem(description, status, duedate);
         }
 
-        public enum UserChoice
+        public List<ToDoItem> ListItems()
         {
-            ListItem,
-            AddItem,
-            UpdateItem,
-            DeleteItem,
-            Quit
+           return Item.GetToDoItems();
         }
 
-       public void ProcessInput()
-       {
-            if(Choice == UserChoice.Quit)
-            {
+        public List<ToDoItem> ListItems(string filter)
+        {
+           return Item.GetToDoItems(filter);
+        }
 
-            }
-       }
-         
+        public void UpdateItem(int id, string newdescription, string newstatus, DateTime newduedate)
+        {
+            Item.UpdateItem(id, newdescription, newstatus, newduedate);
+        }
 
+        public void DeleteItems(int id)
+        {
+            Item.DeleteItem(id);
+        }
     }
 }

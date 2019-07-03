@@ -29,9 +29,14 @@ namespace ToDoItem_App
         public List<ToDoItem> GetToDoItems(string filter)
         {
             string lowFilter = filter.ToLower();
-            if(filter == "done")
+            if(lowFilter == "done")
             {
                 IEnumerable<ToDoItem> list = context.ToDoItems.Where(item => item.Status == filter);
+                return list.ToList();
+            }
+            else if(lowFilter == "pending")
+            {
+                IEnumerable<ToDoItem> list = context.ToDoItems.Where(item => item.Status == "pending");
                 return list.ToList();
             }
             else
