@@ -7,15 +7,7 @@ namespace ToDoItem_App
         static void Main(string[] args)
         {
             ConsoleUtil ToDo = new ConsoleUtil();
-            if (!ToDo.DisplayMenu())
-            {
-                //repeat the code...
-            }
-            else
-            {
-                ToDo.ProcessInput();
-            }
-
+            ToDo.Run();
             Console.Read();
         }
     }

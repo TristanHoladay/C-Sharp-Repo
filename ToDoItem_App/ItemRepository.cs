@@ -25,7 +25,7 @@ namespace ToDoItem_App
 
         #endregion
 
-        #region List Sorted by Done
+        #region List Sorted by Filter
         public List<ToDoItem> GetToDoItems(string filter)
         {
             string lowFilter = filter.ToLower();
@@ -68,11 +68,19 @@ namespace ToDoItem_App
         #endregion
 
         #region Delete Item
-        public void DeleteItem(int id)
+        public ToDoItem DeleteItem(int id)
         {
             ToDoItem delItem = context.ToDoItems.Where(item => item.ID == id).FirstOrDefault();
-            context.ToDoItems.Remove(delItem);
-            context.SaveChanges();
+            if(delItem != null)
+            {
+                context.ToDoItems.Remove(delItem);
+                context.SaveChanges();
+                return delItem;
+            }
+            else
+            {
+                return null;
+            }     
         }
         #endregion
     }

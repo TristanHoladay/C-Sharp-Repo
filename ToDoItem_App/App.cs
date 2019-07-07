@@ -14,13 +14,13 @@ namespace ToDoItem_App
         }
        
          public void AddItem(string description, string status, DateTime duedate)
-        {
-            Item.AddItem(description, status, duedate);
-        }
+         {
+            Item.AddItem(description, status, duedate); 
+         }
 
         public List<ToDoItem> ListItems()
         {
-           return Item.GetToDoItems();
+            return Item.GetToDoItems();
         }
 
         public List<ToDoItem> ListItems(string filter)
@@ -33,9 +33,9 @@ namespace ToDoItem_App
             Item.UpdateItem(id, newdescription, newstatus, newduedate);
         }
 
-        public void DeleteItems(int id)
+        public ToDoItem DeleteItems(int id)
         {
-            Item.DeleteItem(id);
+            return Item.DeleteItem(id);
         }
     }
 }
