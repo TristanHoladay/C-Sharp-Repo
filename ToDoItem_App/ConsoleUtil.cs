@@ -131,6 +131,7 @@ namespace ToDoItem_App
         static void WriteError(string message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine();
             Console.WriteLine(message);
             Console.ResetColor();
         }
@@ -197,21 +198,25 @@ namespace ToDoItem_App
             {
                 switch (Choice)
                 {
+                        //Print List of All Items
                     case UserInput.l:
                         List<ToDoItem> allList = App.ListItems();
                         PrintList(allList);
                         break;
 
+                        //Print List of Done Items
                     case UserInput.done:
                         List<ToDoItem> doneList = App.ListItems("done");
                         PrintList(doneList);
                         break;
 
+                        //Print List of Pending Items
                     case UserInput.pending:
                         List<ToDoItem> pendingList = App.ListItems("pending");
                         PrintList(pendingList);
                         break;
 
+                        //Add Item
                     case UserInput.a:
                         Console.WriteLine("Add and Item: Please provide information in the form-- description|status|dueDate(mm/dd/yyyy)");
                         string itemInfo = Console.ReadLine().Trim();
@@ -228,6 +233,7 @@ namespace ToDoItem_App
                         }
                         break;
 
+                        //Update Item
                     case UserInput.u:
                         Console.WriteLine("To update an item please provide the updated information as: ID|new description |new status|new duedate(mm/dd/yyyy)");
                         string updateInfo = Console.ReadLine().Trim();
@@ -240,10 +246,20 @@ namespace ToDoItem_App
                         else
                         {
                             string[] upParts = updateInfo.Split('|');
-                            App.UpdateItem(int.Parse(upParts[0]), upParts[1], upParts[2], Convert.ToDateTime(upParts[3]));
+
+                            if(App.UpdateItem(int.Parse(upParts[0]), upParts[1], upParts[2], Convert.ToDateTime(upParts[3])) != null)
+                            {
+                                    Console.WriteLine("Your item has been updated.");    
+                            }
+                            else
+                            {
+                                message = "That item does not exist. You might look at the list again to select the correct item ID.";        
+                                WriteError(message);
+                            }
                         }
                         break; 
-
+                    
+                        //Delete Item
                     case UserInput.d:
                         Console.WriteLine("Please provide the ID of the item you would like to delete.");
                         string strId = Console.ReadLine();
@@ -254,7 +270,6 @@ namespace ToDoItem_App
                         }
                         else
                         {
-
                             int id = int.Parse(strId);
 
                             if (App.DeleteItems(id) != null)

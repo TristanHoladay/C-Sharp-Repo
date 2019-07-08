@@ -28,9 +28,9 @@ namespace ToDoItem_App
            return Item.GetToDoItems(filter);
         }
 
-        public void UpdateItem(int id, string newdescription, string newstatus, DateTime newduedate)
+        public ToDoItem UpdateItem(int id, string newdescription, string newstatus, DateTime newduedate)
         {
-            Item.UpdateItem(id, newdescription, newstatus, newduedate);
+           return Item.UpdateItem(id, newdescription, newstatus, newduedate);
         }
 
         public ToDoItem DeleteItems(int id)

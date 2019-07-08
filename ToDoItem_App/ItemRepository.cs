@@ -56,14 +56,24 @@ namespace ToDoItem_App
         #endregion
 
         #region Update Item
-        public void UpdateItem(int id, string newDescription, string newStatus, DateTime newDueDate)
+        public ToDoItem UpdateItem(int id, string newDescription, string newStatus, DateTime newDueDate)
         {
             ToDoItem oldItem = context.ToDoItems.Where(item => item.ID == id).FirstOrDefault();
-            oldItem.Description = newDescription;
-            oldItem.Status = newStatus;
-            oldItem.DueDate = newDueDate;
-            context.Update(oldItem);
-            context.SaveChanges();
+
+            if (oldItem != null)
+            {
+                oldItem.Description = newDescription;
+                oldItem.Status = newStatus;
+                oldItem.DueDate = newDueDate;
+                context.Update(oldItem);
+                context.SaveChanges();
+                return oldItem;
+            }
+            else
+            {
+                return null;
+            }
+            
         }
         #endregion
 
@@ -71,7 +81,8 @@ namespace ToDoItem_App
         public ToDoItem DeleteItem(int id)
         {
             ToDoItem delItem = context.ToDoItems.Where(item => item.ID == id).FirstOrDefault();
-            if(delItem != null)
+
+            if (delItem != null)
             {
                 context.ToDoItems.Remove(delItem);
                 context.SaveChanges();
