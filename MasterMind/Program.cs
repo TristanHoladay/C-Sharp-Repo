@@ -27,7 +27,8 @@ namespace MasterMind
             for (int i = 0; i < 2; i++)
             {
                 Random num = new Random();
-                secret[i] = colorArray[num.Next(0, 3)];
+                int ranNum = num.Next(0, 3);
+                secret[i] = colorArray[ranNum];
             }
         }
 
@@ -65,10 +66,14 @@ namespace MasterMind
                     //Any Colors Match
                     for(int i=0; i<2; i++)
                     {
-                        if (secret[i] == guess[i].ToLower())
+                        for(int j = 0; j < 2; j++ )
                         {
-                            colorHintCount++;
+                            if (secret[i] == guess[j].ToLower())
+                            {
+                                colorHintCount++;
+                            }
                         }
+                        
                     }
 
                     //Any Positions Match
